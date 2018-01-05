@@ -5,7 +5,7 @@ import java.util.List;
 
 //学生主控
 @Entity
-@Table(name = "Student")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
