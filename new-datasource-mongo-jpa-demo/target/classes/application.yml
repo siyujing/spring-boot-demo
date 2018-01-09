@@ -12,16 +12,16 @@ spring.datasource.password:
 spring.datasource.driver-class-name: com.mysql.jdbc.Driver
 
 spring.datasource.dbcp:
-      test-while-idle: true
-      validation-query: SELECT 1
+  test-while-idle: true
+  validation-query: SELECT 1
 spring.datasource.tomcat:
-      test-on-connect: true
+  test-on-connect: true
 
 # 配置mongo
 spring.data.mongodb:
-      host: localhost
-      database: beqp
-      username: bebase
-      password: boxfish
+  host: localhost
+  database: beqp
+  username: bebase
+  password: boxfish
 spring.jooq:
-    sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect
