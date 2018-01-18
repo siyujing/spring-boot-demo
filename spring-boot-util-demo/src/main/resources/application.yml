@@ -4,3 +4,4 @@ server:
 
 test.file.file_1: /test/test1
 test.file.file_2: /test/test2
+test.url_1: /test/name
