@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class BookTest {
@@ -27,5 +29,10 @@ public class BookTest {
     @Test
     public void getAllLabelToCourseHadLabel(){
         bookService.getAllLabelToCourseHadLabel();
+    }
+
+    @Test
+    public void getLabelToCourseHadLabelByBookName() throws IOException {
+        bookService.getAllLabelToCourseHadLabelByBook();
     }
 }

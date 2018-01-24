@@ -10,14 +10,18 @@ import com.testingedu.demos.jdbc_template.mongo.CourseLabelEntity;
 import com.testingedu.demos.jdbc_template.mongo.CourseLabelMongoRepository;
 import com.testingedu.demos.utils.FormatUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -91,4 +95,32 @@ public class BookService {
 
         courseHadLabelAllRepository.save(result);
     }
+
+    // 获取指定书的标注保存到本地 mysql
+    public void getAllLabelToCourseHadLabelByBook() throws IOException {
+        File file = new File("/Users/boxfish/IdeaProjects/spring-boot-demo/new-database-jdbcTemplate-demo/src/main/resources/book.txt");
+        List<String> list = FileUtils.readLines(file);
+        List<BookHadKnowledgeHandler.CourseInfoResponse> courseInfoResponses = bookHadKnowledgeHandler.findByBookName(list);
+        List<String> courseIds = courseInfoResponses.stream().map(BookHadKnowledgeHandler.CourseInfoResponse::getCourseId).collect(Collectors.toList());
+        List<CourseLabelEntity> courseLabelEntities = courseLabelMongoRepository.findByCourseIdIn(courseIds);
+
+        List<CourseHadLabelAllEntity> result = new ArrayList<>();
+
+        courseLabelEntities.forEach(m -> {
+            try {
+                CourseHadLabelAllEntity cl = new CourseHadLabelAllEntity();
+                cl.from(m);
+                result.add(cl);
+                log.debug("add one to list [{}]",m.getCourseId());
+
+            } catch (Exception e) {
+                log.error("add one to list [{}]", m.getCourseId());
+                e.printStackTrace();
+            }
+        });
+
+        courseHadLabelAllRepository.save(result);
+    }
 }
+
+
