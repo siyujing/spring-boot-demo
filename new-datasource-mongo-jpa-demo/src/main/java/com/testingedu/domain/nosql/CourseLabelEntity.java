@@ -2,11 +2,13 @@ package com.testingedu.domain.nosql;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.joda.time.DateTime;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import java.util.List;
 
 @Data
 @Document(collection = "course_label_longze")
@@ -23,4 +25,9 @@ public class CourseLabelEntity {
     private String courseId;
     private String courseNameChinese;
     private String courseNameEnglish;
+
+    private List<String> devKeysInternational;
+
+    private DateTime createTime;
+    private DateTime updateTime;
 }
