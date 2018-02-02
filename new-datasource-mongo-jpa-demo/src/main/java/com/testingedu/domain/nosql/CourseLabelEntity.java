@@ -11,10 +11,10 @@ import javax.persistence.Id;
 import java.util.List;
 
 @Data
-@Document(collection = "course_label_longze")
+@Document(collection = "course_label_syj")
 @CompoundIndexes({
-        @CompoundIndex(name = "index_courseId", def = "{'courseId': 1}", unique = true),
-        @CompoundIndex(name = "index_courseId_courseNameChinese", def = "{'courseId': 1,'courseNameChinese': 1}")
+        @CompoundIndex(name = "label_index_courseId", def = "{'courseId': 1}", unique = true),
+        @CompoundIndex(name = "label_index_courseId_courseNameChinese", def = "{'courseId': 1,'courseNameEnglish': 1}")
 })
 public class CourseLabelEntity {
     @Id
@@ -27,6 +27,8 @@ public class CourseLabelEntity {
     private String courseNameEnglish;
 
     private List<String> devKeysInternational;
+
+    private String operaName;
 
     private DateTime createTime;
     private DateTime updateTime;
