@@ -1,6 +1,8 @@
 package com.testingedu.demos;
 
+import com.testingedu.demos.jdbc_template.service.BookNationalService;
 import com.testingedu.demos.jdbc_template.service.BookService;
+import com.testingedu.demos.jdbc_template.service.CourseNewToBookNationalService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +36,22 @@ public class BookTest {
     @Test
     public void getLabelToCourseHadLabelByBookName() throws IOException {
         bookService.getAllLabelToCourseHadLabelByBook();
+    }
+
+    @Autowired
+    CourseNewToBookNationalService courseNewToBookNationalService;
+
+    @Test
+    public void saveCourseNewToBookNational() {
+        courseNewToBookNationalService.saveCourseNewToBookNational();
+    }
+
+
+    @Autowired
+    BookNationalService bookNationalService;
+
+    @Test
+    public void saveBookSectionKnowledgeToBookNational() throws IOException {
+        bookNationalService.saveBookSectionKnowledgeToBookNational();
     }
 }
