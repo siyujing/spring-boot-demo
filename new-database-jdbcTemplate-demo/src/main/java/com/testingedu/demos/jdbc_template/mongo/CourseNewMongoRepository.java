@@ -8,4 +8,5 @@ public interface CourseNewMongoRepository extends MongoRepository<CourseNew,Stri
     List<CourseNew> findByBookSectionIdNotIn(List<String> courseId);
 
     List<CourseNew> findByBookSectionIdIn(List<String> courseId);
+
 }

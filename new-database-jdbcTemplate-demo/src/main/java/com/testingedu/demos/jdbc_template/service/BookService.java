@@ -5,7 +5,7 @@ import com.testingedu.demos.jdbc_template.domain.BookHadKnowledgeEntity;
 import com.testingedu.demos.jdbc_template.domain.BookHadKnowledgeRepository;
 import com.testingedu.demos.jdbc_template.domain.CourseHadLabelAllEntity;
 import com.testingedu.demos.jdbc_template.domain.CourseHadLabelAllRepository;
-import com.testingedu.demos.jdbc_template.handler.BookHadKnowledgeHandler;
+import com.testingedu.demos.jdbc_template.handler.cloud.BookHadKnowledgeHandler;
 import com.testingedu.demos.jdbc_template.mongo.CourseLabelEntity;
 import com.testingedu.demos.jdbc_template.mongo.CourseLabelMongoRepository;
 import com.testingedu.demos.utils.FormatUtils;

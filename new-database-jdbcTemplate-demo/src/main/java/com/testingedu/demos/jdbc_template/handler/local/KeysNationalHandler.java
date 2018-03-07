@@ -17,7 +17,7 @@ public class KeysNationalHandler {
 
 
     public List<String> findCourseId(){
-        String sql = "SELECT course_id FROM book_national_bak";
+        String sql = "SELECT course_id FROM homework_book_national";
 
         return localBebaseTemplate.query(sql,
                 (resultSet, rowNum) -> {
@@ -25,9 +25,19 @@ public class KeysNationalHandler {
                 });
     }
 
+    public List<String> findPublication(){
+        String sql = "SELECT publication FROM homework_book_national";
+
+        return localBebaseTemplate.query(sql,
+                (resultSet, rowNum) -> {
+                    return resultSet.getString("publication");
+                });
+    }
+
 
     @Data
     public static class BookNationalResponse{
-        String courseId;
+        private String courseId;
+        private String publication;
     }
 }

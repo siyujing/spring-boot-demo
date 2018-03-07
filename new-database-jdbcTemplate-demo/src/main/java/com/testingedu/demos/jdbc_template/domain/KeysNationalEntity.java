@@ -1,6 +1,7 @@
 package com.testingedu.demos.jdbc_template.domain;
 
 import com.testingedu.demos.jdbc_template.mongo.CourseNew;
+import com.testingedu.demos.jdbc_template.mongo.HomeWorkTag;
 import com.testingedu.demos.jdbc_template.protocol.Course;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(
-        name = "book_national",
+        name = "homework_book_national",
         indexes = {
                 @Index(name = "index_publication_grade_bookSection_courseId", columnList = "publication,grade,book_section,course_id", unique = true)
         }
@@ -70,7 +71,15 @@ public class KeysNationalEntity {
 //        this.grade = course.getGrade();
     }
 
-    public void fromBookSectionKnowledge(){
-
+    public void fromHomework(HomeWorkTag course) {
+        this.courseId = course.getBookSectionId();
+        this.courseName = course.getCourseName();
+        this.courseType = Course.Type.convert(course.getCourseType().get(0));
+        this.courseTypeV2 = Course.Type.convert(course.getCourseTypeV2().get(0));
+        this.courseDifficulty = Course.Difficulty.parse(course.getCourseLevel().get(0));
+        this.bundleOrder = Long.parseLong(course.getBundle().getBundleOrder().toString());
+        this.bookSection = course.getBookSection();
+        this.publication = course.getPublication();
+        this.grade = course.getGrade();
     }
 }

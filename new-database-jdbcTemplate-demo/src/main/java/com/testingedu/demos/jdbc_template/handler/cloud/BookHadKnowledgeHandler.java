@@ -1,4 +1,4 @@
-package com.testingedu.demos.jdbc_template.handler;
+package com.testingedu.demos.jdbc_template.handler.cloud;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -46,6 +46,15 @@ public class BookTest {
         courseNewToBookNationalService.saveCourseNewToBookNational();
     }
 
+    @Test
+    public void saveHomeworkToBookNational() {
+        courseNewToBookNationalService.saveHomeworkLongZeToBookNational();
+    }
+
+    @Test
+    public void saveHomeworkToBookNationalByPub() {
+        courseNewToBookNationalService.saveHomeworkLongZeToBookNationalByPub();
+    }
 
     @Autowired
     BookNationalService bookNationalService;
