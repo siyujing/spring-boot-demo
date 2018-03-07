@@ -11,7 +11,7 @@ import java.util.Calendar;
 @Service
 public class TimeStampUtil {
     public static void main(String[] args) throws ParseException {
-        timeStamps();
+        getEndTimeYesterday();
     }
 
     public static void timeStamps() throws ParseException {
@@ -30,21 +30,27 @@ public class TimeStampUtil {
         return LocalDate.now().minusDays(1);
     }
 
+    // 获取当天开始时间的时间戳
     public static Long getStartTimeToday() {
         Calendar todayStart = Calendar.getInstance();
         todayStart.set(Calendar.HOUR_OF_DAY, 0);
         todayStart.set(Calendar.MINUTE, 0);
         todayStart.set(Calendar.SECOND, 0);
         todayStart.set(Calendar.MILLISECOND, 0);
+        System.out.println("1:"+todayStart.getTime());      // 1:Wed Mar 07 00:00:00 CST 2018
+        System.out.println("2:"+todayStart.getTime().getTime());         // 2:1520352000000
         return todayStart.getTime().getTime();
     }
 
+    // 获取当天结束时间的时间戳
     public static Long getEndTimeToday() {
         Calendar todayEnd = Calendar.getInstance();
         todayEnd.set(Calendar.HOUR_OF_DAY, 23);
         todayEnd.set(Calendar.MINUTE, 59);
         todayEnd.set(Calendar.SECOND, 59);
         todayEnd.set(Calendar.MILLISECOND, 999);
+        System.out.println("1todayEnd:"+todayEnd.getTime());        // 1todayEnd:Wed Mar 07 23:59:59 CST 2018
+        System.out.println("2todayEnd:"+todayEnd.getTime().getTime());      // 2todayEnd:1520438399999
         return todayEnd.getTime().getTime();
     }
 
@@ -65,6 +71,8 @@ public class TimeStampUtil {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
+        System.out.println("1calendar:"+calendar.getTime());        // 1calendar:Wed Mar 07 00:00:00 CST 2018
+        System.out.println("2calendar:"+calendar.getTime().getTime());      // 2calendar:1520352000000
         return new DateTime(calendar.getTime());
     }
 }
