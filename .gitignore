@@ -8,4 +8,7 @@
 .idea/modules.xml
 .idea/spring-boot-demo.iml
 .idea/workspace.xml
-mvnw
+mvnw.cmd
+*.iml
+!.mvn/wrapper/maven-wrapper.jar
+.mvn
