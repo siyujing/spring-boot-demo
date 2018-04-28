@@ -4,6 +4,7 @@ package com.testingedu.utilsdemo.file_demo;
 import com.google.common.collect.Lists;
 import com.testingedu.utilsdemo.App.utils.FormatUtils;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.ClassPathResource;
@@ -12,6 +13,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class FileStem {
 
     public static void main(String[] args) {
@@ -57,8 +59,8 @@ public class FileStem {
     }
 
     public static void readFile2() throws IOException {
-        File_list file_list2=new File_list();
-        file_list2.setList(Lists.newArrayList("qwe","ert"));
+        File_list file_list2 = new File_list();
+        file_list2.setList(Lists.newArrayList("qwe", "ert"));
         String toJsonNoException = FormatUtils.toJsonNoException(file_list2);
         System.out.println(toJsonNoException);
 
@@ -75,6 +77,20 @@ public class FileStem {
         System.out.println(FormatUtils.toJsonNoException(file_list1));
     }
 
+    // 读文件流,适用于打包成 jar包
+    public void readFile3() {
+        try {
+            InputStream inputStream = this.getClass().getResourceAsStream("/all_files/test1.txt");
+            String inputString = IOUtils.toString(inputStream, "UTF-8");
+
+            Json_file result = FormatUtils.fromJson(inputString, Json_file.class);
+
+        } catch (IOException e) {
+            log.error("Task properties, load res grade error.", e);
+        }
+    }
+
+
     @Data
     public static class Json_file {
         String keyName;
@@ -82,7 +98,7 @@ public class FileStem {
     }
 
     @Data
-    public static class File_list{
+    public static class File_list {
         List<String> list = new ArrayList<>();
     }
 
