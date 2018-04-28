@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 import java.util.List;
 
 @Slf4j
+@Data
 public class Course {
 
     private String courseId;

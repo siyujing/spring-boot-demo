@@ -3,6 +3,7 @@ package com.testingedu.demos;
 import com.testingedu.demos.jdbc_template.service.BookNationalService;
 import com.testingedu.demos.jdbc_template.service.BookService;
 import com.testingedu.demos.jdbc_template.service.CourseNewToBookNationalService;
+import com.testingedu.demos.jdbc_template.service.ReviewService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +19,18 @@ public class BookTest {
     BookService bookService;
 
     @Test
-    public void getBook(){
+    public void getBook() {
         bookService.getBookSectionLabel();
     }
 
     @Test
-    public void getBookSectionByLevelAndType(){
+    public void getBookSectionByLevelAndType() {
         bookService.getBookSectionByLevelAndType();
     }
 
     // 同步 mongo 所有的标注到 mysql
     @Test
-    public void getAllLabelToCourseHadLabel(){
+    public void getAllLabelToCourseHadLabel() {
         bookService.getAllLabelToCourseHadLabel();
     }
 
@@ -62,5 +63,13 @@ public class BookTest {
     @Test
     public void saveBookSectionKnowledgeToBookNational() throws IOException {
         bookNationalService.saveBookSectionKnowledgeToBookNational();
+    }
+
+    @Autowired
+    ReviewService reviewService;
+
+    @Test
+    public void review() throws IOException {
+        reviewService.review();
     }
 }
