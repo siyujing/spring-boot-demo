@@ -31,7 +31,7 @@ public class MyCallable1 {
         new Thread(future, "有返回值的线程,此处是线程的名称").start();//实质上还是以Callable对象来创建并启动线程
 
         try {
-            System.out.println("子线程的返回值：" + future.get());//get()方法会阻塞，直到子线程执行结束才返回
+            System.out.println("子线程的返回值：" + future.get());//get()方法会阻塞，直到子线程方法执行结束才返回
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
