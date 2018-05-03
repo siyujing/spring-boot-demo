@@ -50,6 +50,12 @@ datasource.cloud.url: jdbc:mysql://127.0.0.1:3306/lzx?useUnicode=true&characterE
 datasource.cloud.username: root
 datasource.cloud.password:
 datasource.cloud.driver-class-name: com.mysql.jdbc.Driver
+
+# 配置 third jdbc
+datasource.third.url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+datasource.third.username: root
+datasource.third.password:
+datasource.third.driver-class-name: com.mysql.jdbc.Driver
 ---
 spring:
   profiles: local
@@ -91,6 +97,12 @@ datasource.cloud.url: jdbc:mysql://127.0.0.1:3306/lzx?useUnicode=true&characterE
 datasource.cloud.username: root
 datasource.cloud.password:
 datasource.cloud.driver-class-name: com.mysql.jdbc.Driver
+
+# 配置 third jdbc
+datasource.third.url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+datasource.third.username: root
+datasource.third.password:
+datasource.third.driver-class-name: com.mysql.jdbc.Driver
 ---
 spring.profiles: test
 spring:
