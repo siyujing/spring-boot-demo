@@ -13,12 +13,6 @@ import javax.sql.DataSource;
 @Configuration
 public class ThirdDataSource {
 
-    // 使用jdbcTempalate 操作时,可以打开注释,直接注入该Bean,双数据源不需要
-//    @Bean(name = "cloudBebaseTemplate")
-//    public JdbcTemplate cloudBebaseTemplate(@Qualifier(value = "cloudBebaseDataSource") DataSource bebaseDataSource) {
-//        return new JdbcTemplate(bebaseDataSource);
-//    }
-
     // 创建数据源
     @Bean(name = "thirdTestDataSource")
     @ConfigurationProperties(prefix="datasource.third")
