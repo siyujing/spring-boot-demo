@@ -20,17 +20,4 @@ public class ThreadService {
         tc.start();
         td.start();
     }
-//    public void test (){
-//        ThreadA ta = new ThreadA();
-//        ThreadB tb = new ThreadB();
-//        ThreadC tc = new ThreadC();
-//
-//        ta.setName("A");
-//        tb.setName("B");
-//        tc.setName("C");
-//
-//        ta.start();
-//        tb.start();
-//        tc.start();
-//    }
 }
