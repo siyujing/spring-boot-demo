@@ -1,6 +1,6 @@
 package com.testingedu.utilsdemo;
 
-import com.testingedu.utilsdemo.MultiThread.synchrized_suo.ThreadService;
+import com.testingedu.utilsdemo.MultiThread.synchrized_suo.NotifyNotifyAll;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringBootUtilDemoApplicationTests {
 
     @Autowired
-    private ThreadService threadService;
+    private NotifyNotifyAll notifyNotifyAll;
 
     @Test
-    public void contextLoads() throws InterruptedException {
-//        threadService.test();
+    public void test() throws InterruptedException {
+//        notifyNotifyAll.test();
+//        Thread.sleep(10000);
     }
 
 }

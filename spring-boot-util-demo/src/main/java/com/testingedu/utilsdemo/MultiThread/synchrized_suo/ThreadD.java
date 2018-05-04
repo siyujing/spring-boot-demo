@@ -9,6 +9,8 @@ public class ThreadD extends Thread {
 
     @Override
     public void run() {
-        tasks.doTaskD();
+        for (int i = 0; i <= 3; i++) {
+            tasks.doTaskD();
+        }
     }
 }
