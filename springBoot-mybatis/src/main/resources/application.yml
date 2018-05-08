@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    配置mysql
+  datasource:
+    dbcp:
+      test-while-idle: true
+      validation-query: SELECT 1
+    tomcat:
+      test-on-connect: true
+  jooq:
+    sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+# titan库
+spring.datasource.titan-master.url: jdbc:mysql://127.0.0.1:3306/bebase?useUnicode=true&characterEncoding=utf-8&useSSL=false
+spring.datasource.titan-master.username: root
+spring.datasource.titan-master.password:
+spring.datasource.titan-master.driver-class-name: com.mysql.jdbc.Driver
+# 连接池配置
+# 省略
+
+# 其它库
+spring.datasource.db2.url: jdbc:mysql://127.0.0.1:3306/lzx?useUnicode=true&characterEncoding=utf-8&useSSL=false
+spring.datasource.db2.username: root
+spring.datasource.db2.password:
+spring.datasource.db2.driver-class-name: com.mysql.jdbc.Driver
