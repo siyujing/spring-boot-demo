@@ -184,7 +184,7 @@
             <!--NAME = #{schoolName}-->
     <!--</select>-->
 
-    <!--<insert id="insertSchool" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertSchool" parameterType="test.mybatis.springboot.model.Region">-->
         <!--<selectKey keyProperty="id" resultType="long">-->
           <!--SELECT LAST_INSERT_ID()-->
         <!--</selectKey>-->
@@ -193,7 +193,7 @@
             <!--(#{schoolName}, date_format(NOW(),'%Y%m%d'))-->
     <!--</insert>-->
 
-    <!--<insert id="insertNameSpaceForRegion" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertNameSpaceForRegion" parameterType="test.mybatis.springboot.model.Region">-->
         <!--INSERT INTO namespace (-->
             <!--name,-->
             <!--open,-->
@@ -219,7 +219,7 @@
             <!--)-->
     <!--</insert>-->
 
-    <!--<select id="selectClassIdByRegion" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
+    <!--<select id="selectClassIdByRegion" parameterType="test.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
         <!--SELECT-->
             <!--b.id-->
         <!--FROM-->
@@ -231,7 +231,7 @@
         <!--AND b.`name` = #{className}-->
     <!--</select>-->
 
-    <!--<insert id="insertClassForRegion" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertClassForRegion" parameterType="test.mybatis.springboot.model.Region">-->
         <!--<selectKey keyProperty="classId" resultType="long">-->
             <!--SELECT LAST_INSERT_ID()-->
         <!--</selectKey>-->
@@ -246,7 +246,7 @@
     <!--</insert>-->
 
 
-    <!--<insert id="insertNameSpaceForClass" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertNameSpaceForClass" parameterType="test.mybatis.springboot.model.Region">-->
         <!--INSERT INTO namespace (-->
             <!--name,-->
             <!--open,-->
@@ -272,7 +272,7 @@
         <!--)-->
     <!--</insert>-->
 
-    <!--<select id="selectUserIdByRegion" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
+    <!--<select id="selectUserIdByRegion" parameterType="test.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
         <!--SELECT-->
             <!--id-->
         <!--FROM-->
@@ -281,7 +281,7 @@
             <!--username = #{userName}-->
     <!--</select>-->
 
-    <!--<insert id="insertUserForRegion" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertUserForRegion" parameterType="test.mybatis.springboot.model.Region">-->
         <!--<selectKey keyProperty="userId" resultType="long">-->
             <!--SELECT LAST_INSERT_ID()-->
         <!--</selectKey>-->
@@ -312,7 +312,7 @@
         <!--)-->
     <!--</insert>-->
 
-    <!--<select id="selectNameSpaceIdForRegion" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
+    <!--<select id="selectNameSpaceIdForRegion" parameterType="test.mybatis.springboot.model.Region" resultType="java.lang.Long">-->
         <!--SELECT-->
             <!--id-->
         <!--FROM-->
@@ -332,7 +332,7 @@
         <!--AND param = #{classId}-->
     <!--</select>-->
 
-    <!--<insert id="insertNameSpaceHasUserForRegion" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertNameSpaceHasUserForRegion" parameterType="test.mybatis.springboot.model.Region">-->
         <!--INSERT namespace_has_user (-->
             <!--version,-->
             <!--namespace_id,-->
@@ -363,7 +363,7 @@
             <!--(#{userId}, #{value}, #{key})-->
     <!--</insert>-->
 
-    <!--<insert id="insertUserHasPerm" parameterType="boxfish.mybatis.springboot.model.Region">-->
+    <!--<insert id="insertUserHasPerm" parameterType="test.mybatis.springboot.model.Region">-->
         <!--INSERT INTO user_has_perm-->
           <!--(user_id,-->
           <!--permission)-->
@@ -374,7 +374,7 @@
             <!--)-->
     <!--</insert>-->
 
-    <!--<select id="selectNameSpaceHasUser" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.lang.Integer">-->
+    <!--<select id="selectNameSpaceHasUser" parameterType="test.mybatis.springboot.model.Region" resultType="java.lang.Integer">-->
         <!--SELECT-->
             <!--COUNT(1)-->
         <!--FROM-->
@@ -384,7 +384,7 @@
         <!--AND user_id = #{userId}-->
     <!--</select>-->
 
-    <!--<select id="selectUserHasPerm" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.lang.Integer">-->
+    <!--<select id="selectUserHasPerm" parameterType="test.mybatis.springboot.model.Region" resultType="java.lang.Integer">-->
         <!--SELECT-->
             <!--COUNT(1)-->
         <!--FROM-->
@@ -420,7 +420,7 @@
         <!--WHERE source_id=#{relationOne} AND target_id=#{relationTwo}-->
     <!--</update>-->
 
-    <!--<select id="selectUserMesScore" parameterType="boxfish.mybatis.springboot.model.Region" resultType="java.util.HashMap">-->
+    <!--<select id="selectUserMesScore" parameterType="test.mybatis.springboot.model.Region" resultType="java.util.HashMap">-->
         <!--SELECT-->
             <!--a.id userId,-->
             <!--a.access_token accessToken,-->

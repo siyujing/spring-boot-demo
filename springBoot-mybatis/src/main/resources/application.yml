@@ -32,7 +32,7 @@ spring.datasource.titan-master.driver-class-name: com.mysql.jdbc.Driver
 # 省略
 
 logging:
-  file: ${user.home}/logs/${HOSTNAME:boxfish}/${spring.application.name}.log
+  file: ${user.home}/logs/${HOSTNAME:log}/${spring.application.name}.log
   level:
     org.springframework: WARN
     com.testingedu.demos: DEBUG
