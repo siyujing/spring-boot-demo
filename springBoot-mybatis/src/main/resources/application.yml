@@ -1,3 +1,5 @@
+spring.application.name: springBoot-mybatis
+
 spring:
   jpa:
     show-sql: true
@@ -15,6 +17,12 @@ spring:
   jooq:
     sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
+# 其它库
+spring.datasource.db2.url: jdbc:mysql://127.0.0.1:3306/lzx?useUnicode=true&characterEncoding=utf-8&useSSL=false
+spring.datasource.db2.username: root
+spring.datasource.db2.password:
+spring.datasource.db2.driver-class-name: com.mysql.jdbc.Driver
+
 # titan库
 spring.datasource.titan-master.url: jdbc:mysql://127.0.0.1:3306/bebase?useUnicode=true&characterEncoding=utf-8&useSSL=false
 spring.datasource.titan-master.username: root
@@ -23,8 +31,10 @@ spring.datasource.titan-master.driver-class-name: com.mysql.jdbc.Driver
 # 连接池配置
 # 省略
 
-# 其它库
-spring.datasource.db2.url: jdbc:mysql://127.0.0.1:3306/lzx?useUnicode=true&characterEncoding=utf-8&useSSL=false
-spring.datasource.db2.username: root
-spring.datasource.db2.password:
-spring.datasource.db2.driver-class-name: com.mysql.jdbc.Driver
+logging:
+  file: ${user.home}/logs/${HOSTNAME:boxfish}/${spring.application.name}.log
+  level:
+    org.springframework: WARN
+    com.testingedu.demos: DEBUG
+server:
+  port: 8099
