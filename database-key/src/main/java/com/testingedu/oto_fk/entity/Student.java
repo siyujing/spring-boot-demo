@@ -3,9 +3,6 @@ package com.testingedu.oto_fk.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by boxfish on 17/1/9.
- */
 @Entity
 @Table(name = "Student")
 public class Student implements Serializable{

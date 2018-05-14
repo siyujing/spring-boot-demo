@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-/**
- * Created by boxfish on 17/9/12.
- */
 @Configuration
 public class LocalDataSource {
 

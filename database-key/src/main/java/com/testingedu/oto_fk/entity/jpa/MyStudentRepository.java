@@ -6,9 +6,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by boxfish on 17/1/12.
- */
 @Component(value = "MyStudentRepository")
 public interface MyStudentRepository {
     @Transactional

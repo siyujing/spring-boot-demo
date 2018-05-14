@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by boxfish on 17/1/9.
- */
 @RestController
 public class Otm_dfkController {
     @Autowired

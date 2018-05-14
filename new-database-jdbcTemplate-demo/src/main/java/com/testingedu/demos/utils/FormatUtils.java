@@ -10,9 +10,6 @@ import com.fasterxml.jackson.datatype.joda.JodaModule;
 
 import java.io.IOException;
 
-/**
- * Created by boxfish on 17/7/7.
- */
 public class FormatUtils {
 
     // For json

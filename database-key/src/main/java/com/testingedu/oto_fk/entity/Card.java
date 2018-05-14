@@ -3,9 +3,7 @@ package com.testingedu.oto_fk.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by boxfish on 17/1/9.
- */
+
 @Entity
 @Table(name = "card")
 public class Card {

@@ -2,9 +2,6 @@ package com.testingedu.otm_dfk.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by boxfish on 17/1/9.
- */
 @Entity
 @Table(name = "Student")
 public class Student {

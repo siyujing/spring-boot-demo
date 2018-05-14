@@ -8,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-/**
- * Created by boxfish on 17/1/9.
- */
 @Service
 //        (value = "otm_fk_Service")
 public class Oto_fkService {

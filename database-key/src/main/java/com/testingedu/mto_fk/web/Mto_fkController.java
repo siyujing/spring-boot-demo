@@ -8,9 +8,6 @@
 //import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RestController;
 //
-///**
-// * Created by boxfish on 17/1/9.
-// */
 //@RestController
 //public class Mto_fkController {
 //    @Autowired

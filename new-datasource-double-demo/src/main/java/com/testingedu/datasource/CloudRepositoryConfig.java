@@ -14,9 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
-/**
- * Created by boxfish on 17/9/13.
- */
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "cloudEntityManagerFactory",transactionManagerRef = "cloudTransactionManager",basePackages = {"com.testingedu.domain_cloud"})

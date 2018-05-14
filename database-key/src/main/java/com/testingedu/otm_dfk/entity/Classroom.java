@@ -3,9 +3,6 @@ package com.testingedu.otm_dfk.entity;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by boxfish on 17/1/9.
- */
 @Entity
 @Table(name = "classroom")
 @Cacheable
