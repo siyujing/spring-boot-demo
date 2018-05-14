@@ -22,6 +22,6 @@ spring.data.mongodb:
   host: localhost
   database: beqp
   username: bebase
-  password: boxfish
+  password:
 spring.jooq:
   sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect

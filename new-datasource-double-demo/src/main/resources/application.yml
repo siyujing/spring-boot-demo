@@ -35,7 +35,7 @@ spring:
 #      host: localhost
 #      database: beqp
 #      username: bebase
-#      password: boxfish
+#      password:
 #  jooq:
 #    sql-dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
