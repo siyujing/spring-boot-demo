@@ -49,8 +49,8 @@ public class MybatisDbBConfig {
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
-            factoryBean.setMapperLocations(resolver.getResources("classpath:mapper_ds2/*.xml"));
-            factoryBean.setTypeAliasesPackage("com.testingedu.demos.domain");
+            factoryBean.setMapperLocations(resolver.getResources("classpath:mappers/*.xml"));
+            factoryBean.setTypeAliasesPackage("com.testingedu.demos.domain.mysql");
 
         } catch (Exception e) {
             log.error("+++MybatisDbBConfig, sqlSessionFactory2 error", e);

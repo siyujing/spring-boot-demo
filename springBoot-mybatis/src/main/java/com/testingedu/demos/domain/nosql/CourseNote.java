@@ -1,4 +1,4 @@
-package com.testingedu.demos.domain_mongo;
+package com.testingedu.demos.domain.nosql;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;

@@ -50,11 +50,15 @@ spring.data.mongodb:
     host: localhost
     port: 27017
     database: beqp
+    username: bebase
+    password: boxfish
+
   secondary:
     host: localhost
     port: 27017
     database: test
-
+    username: bebase
+    password: boxfish
 logging:
   file: ${user.home}/logs/${HOSTNAME:log}/${spring.application.name}.log
   level:

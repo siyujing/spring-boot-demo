@@ -35,7 +35,7 @@ public class MybatisDbAConfig {
     public SqlSessionFactory sqlSessionFactory1() throws Exception {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(ds1); // 使用titan数据源, 连接titan库
-        factoryBean.setTypeAliasesPackage("com.testingedu.demos.domain");
+        factoryBean.setTypeAliasesPackage("com.testingedu.demos.domain.mysql");
 
         //分页插件
         PageHelper pageHelper = new PageHelper();
@@ -52,7 +52,7 @@ public class MybatisDbAConfig {
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
-            factoryBean.setMapperLocations(resolver.getResources("classpath:mapper_titan/*.xml"));
+            factoryBean.setMapperLocations(resolver.getResources("classpath:mappers/*.xml"));
 
         } catch (Exception e) {
             log.error("+++MybatisDbAConfig, sqlSessionFactory1 error", e);
