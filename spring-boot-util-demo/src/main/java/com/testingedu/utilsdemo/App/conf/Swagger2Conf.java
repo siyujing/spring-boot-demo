@@ -24,7 +24,7 @@ public class Swagger2Conf {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("springboot利用swagger构建api文档")
-                .description("简单优雅的restApi风格")
+                .description("优雅的restApi风格")
                 .termsOfServiceUrl("http://localhost:8088/time")
                 .version("1.0")
                 .build();
