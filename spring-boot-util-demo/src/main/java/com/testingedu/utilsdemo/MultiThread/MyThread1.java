@@ -4,8 +4,8 @@ public class MyThread1 extends Thread {
 
     @Override
     public void run() {
-        for (int i=0;i<=100000;i++){
-            System.out.println("myThread1:"+i);
+        for (int i = 0; i <= 100000; i++) {
+            System.out.println("myThread1:" + i);
         }
     }
 
@@ -16,8 +16,8 @@ public class MyThread1 extends Thread {
         MyThread2 myThread2 = new MyThread2();
         myThread2.start();
 
-        for (int i=0;i<=100000;i++){
-            System.out.println("localThread:"+i);
+        for (int i = 0; i <= 100000; i++) {
+            System.out.println("localThread:" + i);
         }
 
     }

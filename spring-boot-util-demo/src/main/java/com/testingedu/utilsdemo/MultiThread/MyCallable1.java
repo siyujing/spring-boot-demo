@@ -18,8 +18,8 @@ public class MyCallable1 {
         Callable<Integer> callable = new Callable<Integer>() {
             @Override
             public Integer call() throws Exception {
-                for (int i=0;i<=10;i++){
-                log.debug("test="+i);
+                for (int i = 0; i <= 10; i++) {
+                    log.debug("test=" + i);
                 }
                 return 55;
             }

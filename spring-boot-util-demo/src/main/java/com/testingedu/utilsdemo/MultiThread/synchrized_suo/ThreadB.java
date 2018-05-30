@@ -1,6 +1,6 @@
 package com.testingedu.utilsdemo.MultiThread.synchrized_suo;
 
-public class ThreadB extends Thread{
+public class ThreadB extends Thread {
 
 
     private Tasks tasks;

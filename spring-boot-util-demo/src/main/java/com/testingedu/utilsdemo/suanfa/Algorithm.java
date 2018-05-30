@@ -29,18 +29,18 @@ public class Algorithm {
 
     // 冒泡
     public void selectSort() {
-        int a[] = {1,9,8, 3, 6, 7};
-        for (int i=0;i<a.length;i++){
-            for (int j=i+1;j<a.length;j++){
-                if (a[i]>a[j]){
+        int a[] = {1, 9, 8, 3, 6, 7};
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
                     int tem = a[i];
                     a[i] = a[j];
                     a[j] = tem;
                 }
             }
         }
-        for (int i=0;i<a.length ;i++){
-            System.out.println("a="+a[i]);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println("a=" + a[i]);
         }
     }
 }

@@ -18,7 +18,7 @@ public class TimeStampUtil {
         long timeStamp = System.currentTimeMillis();
         System.out.println(timeStamp);          // 1515985082392
 
-        SimpleDateFormat format =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String d = format.format(timeStamp);
         System.out.println(d);                    // d = 2018-01-15 10:58:02
         System.out.println(format.parse(d));      // Mon Jan 15 10:58:02 CST 2018
@@ -37,8 +37,8 @@ public class TimeStampUtil {
         todayStart.set(Calendar.MINUTE, 0);
         todayStart.set(Calendar.SECOND, 0);
         todayStart.set(Calendar.MILLISECOND, 0);
-        System.out.println("1:"+todayStart.getTime());      // 1:Wed Mar 07 00:00:00 CST 2018
-        System.out.println("2:"+todayStart.getTime().getTime());         // 2:1520352000000
+        System.out.println("1:" + todayStart.getTime());      // 1:Wed Mar 07 00:00:00 CST 2018
+        System.out.println("2:" + todayStart.getTime().getTime());         // 2:1520352000000
         return todayStart.getTime().getTime();
     }
 
@@ -49,8 +49,8 @@ public class TimeStampUtil {
         todayEnd.set(Calendar.MINUTE, 59);
         todayEnd.set(Calendar.SECOND, 59);
         todayEnd.set(Calendar.MILLISECOND, 999);
-        System.out.println("1todayEnd:"+todayEnd.getTime());        // 1todayEnd:Wed Mar 07 23:59:59 CST 2018
-        System.out.println("2todayEnd:"+todayEnd.getTime().getTime());      // 2todayEnd:1520438399999
+        System.out.println("1todayEnd:" + todayEnd.getTime());        // 1todayEnd:Wed Mar 07 23:59:59 CST 2018
+        System.out.println("2todayEnd:" + todayEnd.getTime().getTime());      // 2todayEnd:1520438399999
         return todayEnd.getTime().getTime();
     }
 
@@ -71,8 +71,8 @@ public class TimeStampUtil {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        System.out.println("1calendar:"+calendar.getTime());        // 1calendar:Wed Mar 07 00:00:00 CST 2018
-        System.out.println("2calendar:"+calendar.getTime().getTime());      // 2calendar:1520352000000
+        System.out.println("1calendar:" + calendar.getTime());        // 1calendar:Wed Mar 07 00:00:00 CST 2018
+        System.out.println("2calendar:" + calendar.getTime().getTime());      // 2calendar:1520352000000
         return new DateTime(calendar.getTime());
     }
 }
