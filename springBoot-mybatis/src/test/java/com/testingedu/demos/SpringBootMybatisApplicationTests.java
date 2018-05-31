@@ -1,9 +1,7 @@
 package com.testingedu.demos;
 
 import com.testingedu.demos.service_demo.UserService;
-import org.assertj.core.condition.DoesNotHave;
 import org.junit.Test;
-import org.junit.runner.Result;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
