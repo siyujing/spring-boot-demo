@@ -1,7 +1,8 @@
 server:
   port: 8088
-  context-path: /service
+#  context-path: /service
 
 test.file.file_1: /test/test1?name=%s
 test.file.file_2: /test/test2
 test.url_1: /test/name
+
