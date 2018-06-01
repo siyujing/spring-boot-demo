@@ -4,9 +4,7 @@ import com.testingedu.springbootmybatisplus.service.IDemoInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -30,6 +28,16 @@ public class DemoInfoController {
     public Object deleteAll() {
         try {
             return demoInfoService.deleteAll();
+        } catch (Exception e) {
+            log.error("delete error", e);
+            return ResponseEntity.badRequest().body("error");
+        }
+    }
+
+    @RequestMapping(value = "/demo_info/page/{num}/{size}", method = RequestMethod.GET)
+    public Object selectPage(@PathVariable(name = "num") Integer pageNum, @PathVariable(name = "size") Integer size ) {
+        try {
+            return demoInfoService.selectDemoInfoPage(pageNum,size);
         } catch (Exception e) {
             log.error("delete error", e);
             return ResponseEntity.badRequest().body("error");

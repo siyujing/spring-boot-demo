@@ -51,7 +51,7 @@ spring.data.mongodb:
     port: 27017
     database: beqp
     username: bebase
-    password: 
+    password:
 
   secondary:
     host: localhost
