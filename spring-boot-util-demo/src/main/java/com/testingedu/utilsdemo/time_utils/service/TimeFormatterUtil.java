@@ -29,6 +29,15 @@ public class TimeFormatterUtil {
         String dayOfMonthAsString = dayOfMonth.getAsString();
         System.out.println("dayOfMonthAsString="+dayOfMonthAsString);       // dayOfMonthAsString=2
 
+        DateTime dateTime = new DateTime();
+        DateTime.Property property = dateTime.millisOfSecond();
+        System.out.println("result="+property.getAsString());               // result=650
+
+        System.out.println(dateTime.toLocalDate());                         // 2018-06-08
+        System.out.println(dateTime.toLocalDateTime());                     // 2018-06-08T11:09:43.543
+        System.out.println(dateTime.toLocalTime());                         // 11:09:43.543
+        System.out.println(dateTime.toString("yyyy-MM-dd HH:mm:ss"));       // 2018-06-08 11:09:43
+
     }
 
 

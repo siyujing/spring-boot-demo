@@ -7,9 +7,7 @@ import com.testingedu.springbootmybatisplus.domain.mysql.DemoInfo;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface DemoInfoMapper extends SuperMapper<DemoInfo> {
