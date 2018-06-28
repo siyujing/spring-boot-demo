@@ -23,26 +23,26 @@ public class Order implements IOrderForAdmin,IOrderForOtherSys,IOrderForPortal{
 
     @Override
     public String deleteOrder() {
-        System.out.println("delete order");
-        return "delete order";
+        System.out.println("delete bundle");
+        return "delete bundle";
     }
 
     @Override
     public String updateOrder() {
-        System.out.println("update order");
-        return "update order";
+        System.out.println("update bundle");
+        return "update bundle";
     }
 
     @Override
     public String insertOrder() {
-        System.out.println("insert order");
-        return "insert order";
+        System.out.println("insert bundle");
+        return "insert bundle";
     }
 
     @Override
     public String getOrder() {
-        System.out.println("get order");
-        return "get order";
+        System.out.println("get bundle");
+        return "get bundle";
     }
 
 }

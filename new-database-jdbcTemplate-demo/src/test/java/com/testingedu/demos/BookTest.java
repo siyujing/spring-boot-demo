@@ -3,6 +3,8 @@ package com.testingedu.demos;
 import com.testingedu.demos.jdbc_template.service.BookNationalService;
 import com.testingedu.demos.jdbc_template.service.BookService;
 import com.testingedu.demos.jdbc_template.service.CourseNewToBookNationalService;
+import com.testingedu.demos.jdbc_template.service.v12.V12Course;
+import com.testingedu.demos.jdbc_template.service.v12.WordService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,19 +19,20 @@ public class BookTest {
     @Autowired
     BookService bookService;
 
+
     @Test
-    public void getBook(){
+    public void getBook() {
         bookService.getBookSectionLabel();
     }
 
     @Test
-    public void getBookSectionByLevelAndType(){
+    public void getBookSectionByLevelAndType() {
         bookService.getBookSectionByLevelAndType();
     }
 
     // 同步 mongo 所有的标注到 mysql
     @Test
-    public void getAllLabelToCourseHadLabel(){
+    public void getAllLabelToCourseHadLabel() {
         bookService.getAllLabelToCourseHadLabel();
     }
 
@@ -62,5 +65,26 @@ public class BookTest {
     @Test
     public void saveBookSectionKnowledgeToBookNational() throws IOException {
         bookNationalService.saveBookSectionKnowledgeToBookNational();
+    }
+
+
+    @Autowired
+    private WordService wordService;
+
+    @Test
+    public void wordTest() throws IOException {
+        wordService.getCourse();
+    }
+
+    @Autowired
+    private V12Course v12Course;
+//    初中各年级核心及一对一课程列表0628.xlsx
+//    小学各年级核心及一对一课程列表0628.xlsx
+//    高中各年级核心及一对一课程列表0628.xlsx
+    @Test
+    public void SaveTop() throws IOException {
+        v12Course.saveTop("/Users/boxfish/Downloads/小学各年级核心及一对一课程列表0628.xlsx");
+        v12Course.saveTop("/Users/boxfish/Downloads/初中各年级核心及一对一课程列表0628.xlsx");
+        v12Course.saveTop("/Users/boxfish/Downloads/高中各年级核心及一对一课程列表0628.xlsx");
     }
 }

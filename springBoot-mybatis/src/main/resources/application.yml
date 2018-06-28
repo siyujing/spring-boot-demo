@@ -46,10 +46,10 @@ spring.datasource.titan-master.maxActive: 20
 #basic.mongodb.password:
 #
 ##mongo 2库
-#order.mongodb.host: localhost
-#order.mongodb.database: beqp
-#order.mongodb.username: bebase
-#order.mongodb.password:
+#bundle.mongodb.host: localhost
+#bundle.mongodb.database: beqp
+#bundle.mongodb.username: bebase
+#bundle.mongodb.password:
 
 spring.data.mongodb:
   primary:

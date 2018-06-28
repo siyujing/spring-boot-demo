@@ -70,6 +70,49 @@ public class BookHadKnowledgeHandler {
         return responses;
     }
 
+
+    // jdbcTemplate in操作传参
+    public List<CourseInfoResponse> findByNameIn(List<String> courseNames) {
+
+        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(cloudBebaseTemplate.getDataSource());
+
+        String sql = "select book_section.id,book_section.`projectName`,book_section.name from book_section where name IN (:courseNames)";
+        Map<String, Object> map = new HashMap<>();
+        map.put("courseNames", courseNames);
+
+        List<Map<String, Object>> resultSet = namedParameterJdbcTemplate.queryForList(sql, map);
+        List<CourseInfoResponse> responses = new ArrayList<>();
+        resultSet.forEach(r -> {
+            CourseInfoResponse c = new CourseInfoResponse();
+            c.setProjectName((String) r.get("projectName"));
+            c.setCourseId((String) r.get("id"));
+            c.setName((String) r.get("name"));
+            responses.add(c);
+        });
+        return responses;
+    }
+
+    // jdbcTemplate in操作传参
+    public List<CourseInfoResponse> findByName(String name) {
+
+        NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(cloudBebaseTemplate.getDataSource());
+
+        String sql = "select book_section.id,book_section.`projectName`,book_section.name from book_section where name = (:name)";
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", name);
+
+        List<Map<String, Object>> resultSet = namedParameterJdbcTemplate.queryForList(sql, map);
+        List<CourseInfoResponse> responses = new ArrayList<>();
+        resultSet.forEach(r -> {
+            CourseInfoResponse c = new CourseInfoResponse();
+            c.setProjectName((String) r.get("projectName"));
+            c.setCourseId((String) r.get("id"));
+            c.setName((String) r.get("name"));
+            responses.add(c);
+        });
+        return responses;
+    }
+
     @Data
     public static class BookHadKnowledgeResponse {
         private String lesson;
@@ -80,5 +123,6 @@ public class BookHadKnowledgeHandler {
     public static class CourseInfoResponse {
         private String courseId;
         private String projectName;
+        private String name;
     }
 }
