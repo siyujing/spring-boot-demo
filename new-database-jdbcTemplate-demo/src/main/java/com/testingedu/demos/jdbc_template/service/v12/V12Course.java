@@ -38,10 +38,10 @@ public class V12Course {
                 bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
 
                 bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
-                bookSectionEntity.setType(courseJson.getKnowledgeType());
+//                bookSectionEntity.setType(courseJson.getKnowledgeType());
                 bookSectionEntity.setProjectName(courseJson.getProjectName());
-                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
-                bookSectionEntity.setDifficulty(courseJson.getLevel());
+//                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
+//                bookSectionEntity.setDifficulty(courseJson.getLevel());
                 result.add(bookSectionEntity);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

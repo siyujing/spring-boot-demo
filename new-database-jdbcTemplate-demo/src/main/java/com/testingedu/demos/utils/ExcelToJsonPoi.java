@@ -34,7 +34,7 @@ public class ExcelToJsonPoi {
 
             book = new XSSFWorkbook(is);
 
-            sheet = book.getSheetAt(1);
+            sheet = book.getSheetAt(0);
 
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
@@ -55,9 +55,11 @@ public class ExcelToJsonPoi {
                         json.setGrade(row.getCell(1).getStringCellValue());
 //                        json.setType(row.getCell(2).getStringCellValue());
 //                        json.setLabel(row.getCell(3).getStringCellValue());
-                        json.setKnowledgeType(row.getCell(4).getStringCellValue());
-                        json.setLevel(row.getCell(5).getStringCellValue());
-                        json.setProjectName(row.getCell(6).getStringCellValue());
+
+//                        json.setKnowledgeType(row.getCell(4).getStringCellValue());
+//                        json.setLevel(row.getCell(5).getStringCellValue());
+
+                        json.setProjectName(row.getCell(2).getStringCellValue());
 //                        json.setBookName(row.getCell(6).getStringCellValue());
 //                        json.setCourseName(row.getCell(7).getStringCellValue());
 

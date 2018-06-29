@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
-@Entity(name = "course_candidate_recommend_top")
+@Entity(name = "course_candidate_task_word")
 public class BookSectionEntity {
     //    course_candidate_recommend_top
     @Id
