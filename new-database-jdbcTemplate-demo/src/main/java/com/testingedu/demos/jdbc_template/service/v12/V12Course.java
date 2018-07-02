@@ -10,6 +10,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.print.DocFlavor;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +34,30 @@ public class V12Course {
             BookSectionEntity bookSectionEntity = new BookSectionEntity();
 
             try {
+                // for course_candidate_online
                 bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
-                bookSectionEntity.setGrade(courseJson.getGrade());
                 bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
-
-                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
-//                bookSectionEntity.setType(courseJson.getKnowledgeType());
+                bookSectionEntity.setType(courseJson.getType());
                 bookSectionEntity.setProjectName(courseJson.getProjectName());
+                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
+                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
+                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+                bookSectionEntity.setLabelType(courseJson.getLabel());
+                bookSectionEntity.setStage(getStage(courseJson.getStage()));
+
+                // for course_candidate_task_core
+//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
+//                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
+//                bookSectionEntity.setGrade(courseJson.getGrade());
+//                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
+//                bookSectionEntity.setType(courseJson.getType());
+//                bookSectionEntity.setLabelType(courseJson.getLabel());
+//                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
 //                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
-//                bookSectionEntity.setDifficulty(courseJson.getLevel());
+//                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
+//                bookSectionEntity.setProjectName(courseJson.getProjectName());
+
+
                 result.add(bookSectionEntity);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -51,7 +67,6 @@ public class V12Course {
             }
         });
         try {
-//            v12Handler.saveTop(result);
             bookSectionRepository.save(result);
         } catch (Exception e) {
             log.error("projectName=" + courseJsons.get(0).getProjectName(), e);
@@ -151,6 +166,70 @@ public class V12Course {
                 return 2061L;
             default:
                 return 99999L;
+
+        }
+    }
+
+    public String getDifficulty(String level) {
+        switch (level) {
+            case "Level 1":
+                return "LEVEL_1";
+            case "Level 2":
+                return "LEVEL_2";
+            case "Level 3":
+                return "LEVEL_3";
+            case "Level 4":
+                return "LEVEL_4";
+
+            case "Level 5":
+                return "LEVEL_5";
+
+            case "Level 6":
+                return "LEVEL_6";
+
+            case "Level 7":
+                return "LEVEL_7";
+
+            case "Level 8":
+                return "LEVEL_8";
+            default:
+                return level;
+
+        }
+    }
+
+    public String getStage(String stage) {
+        switch (stage) {
+            case "第1阶":
+                return "1";
+            case "第2阶":
+                return "2";
+            case "第3阶":
+                return "3";
+            case "第4阶":
+                return "4";
+            case "第5阶":
+                return "5";
+            case "第6阶":
+                return "6";
+            case "第7阶":
+                return "7";
+            case "第8阶":
+                return "8";
+            case "第9阶":
+                return "9";
+            case "第10阶":
+                return "10";
+            case "第11阶":
+                return "11";
+            case "第12阶":
+                return "12";
+            case "第13阶":
+                return "13";
+            case "第14阶":
+                return "14";
+            default:
+                return stage;
 
         }
     }

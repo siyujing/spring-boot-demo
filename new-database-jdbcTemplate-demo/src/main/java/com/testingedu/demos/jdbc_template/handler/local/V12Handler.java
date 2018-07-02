@@ -27,8 +27,8 @@ public class V12Handler {
             map.put("course_id", bookSectionEntity.getCourseId());
             map.put("project_name",bookSectionEntity.getProjectName());
             map.put("type", bookSectionEntity.getType());
-            map.put("grade", bookSectionEntity.getGrade());
-            map.put("grade_index", bookSectionEntity.getGradeIndex());
+//            map.put("grade", bookSectionEntity.getGrade());
+//            map.put("grade_index", bookSectionEntity.getGradeIndex());
             map.put("bundle", bookSectionEntity.getBundle());
 
             int result = namedParameterJdbcTemplate.update(sql, map);

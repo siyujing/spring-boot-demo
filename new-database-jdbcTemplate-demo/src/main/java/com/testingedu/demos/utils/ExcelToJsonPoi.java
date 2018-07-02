@@ -34,7 +34,7 @@ public class ExcelToJsonPoi {
 
             book = new XSSFWorkbook(is);
 
-            sheet = book.getSheetAt(0);
+            sheet = book.getSheetAt(1);
 
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
@@ -45,23 +45,25 @@ public class ExcelToJsonPoi {
                         CourseJson json = new CourseJson();
                         //对于纯数字内容要做这一操作
                         row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
-//                    row.getCell(1).setCellType(Cell.CELL_TYPE_STRING);
-//                    row.getCell(2).setCellType(Cell.CELL_TYPE_STRING);
-//                    row.getCell(3).setCellType(Cell.CELL_TYPE_STRING);
-//                    row.getCell(4).setCellType(Cell.CELL_TYPE_STRING);
-//                    row.getCell(5).setCellType(Cell.CELL_TYPE_STRING);
 
+                        // course_candidate_online
                         json.setBundle(row.getCell(0).getStringCellValue());
-                        json.setGrade(row.getCell(1).getStringCellValue());
-//                        json.setType(row.getCell(2).getStringCellValue());
-//                        json.setLabel(row.getCell(3).getStringCellValue());
+                        json.setStage(row.getCell(1).getStringCellValue());
+                        json.setType(row.getCell(2).getStringCellValue());
+                        json.setLabel(row.getCell(3).getStringCellValue());
+                        json.setKnowledgeType(row.getCell(4).getStringCellValue());
+                        json.setLevel(row.getCell(5).getStringCellValue());
+                        json.setProjectName(row.getCell(6).getStringCellValue());
 
+                        // course_candidate_task_core
+//                        json.setBundle(row.getCell(0).getStringCellValue());
+//                        json.setGrade(row.getCell(1).getStringCellValue());
+//                        json.setType(row.getCell(2).getStringCellValue());
+////                        json.setLabel(row.getCell(3).getStringCellValue());
 //                        json.setKnowledgeType(row.getCell(4).getStringCellValue());
 //                        json.setLevel(row.getCell(5).getStringCellValue());
+//                        json.setProjectName(row.getCell(6).getStringCellValue());
 
-                        json.setProjectName(row.getCell(2).getStringCellValue());
-//                        json.setBookName(row.getCell(6).getStringCellValue());
-//                        json.setCourseName(row.getCell(7).getStringCellValue());
 
                         jsons.add(json);
                     }
@@ -87,14 +89,13 @@ public class ExcelToJsonPoi {
     @Data
     public static class CourseJson {
         private String id;
-        private String grade;
         private String type;
         private String label;
         private String knowledgeType;
         private String level;
-        private String bookName;
-        private String courseName;
         private String bundle;
         private String projectName;
+        private String stage;
+        private String grade;
     }
 }
