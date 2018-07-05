@@ -3,14 +3,12 @@ package com.testingedu.demos.jdbc_template.service.v12;
 
 import com.testingedu.demos.jdbc_template.domain.BookSectionEntity;
 import com.testingedu.demos.jdbc_template.domain.BookSectionRepository;
-import com.testingedu.demos.jdbc_template.handler.local.V12Handler;
 import com.testingedu.demos.utils.ExcelToJsonPoi;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.print.DocFlavor;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +18,6 @@ import java.util.List;
 public class V12Course {
     @Autowired
     private ExcelToJsonPoi excelToJsonPoi;
-    @Autowired
-    private V12Handler v12Handler;
     @Autowired
     private BookSectionRepository bookSectionRepository;
 
@@ -35,28 +31,34 @@ public class V12Course {
 
             try {
                 // for course_candidate_online
-                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
-                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
-                bookSectionEntity.setType(courseJson.getType());
-                bookSectionEntity.setProjectName(courseJson.getProjectName());
-                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
-                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
-                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
-                bookSectionEntity.setLabelType(courseJson.getLabel());
-                bookSectionEntity.setStage(getStage(courseJson.getStage()));
-
-                // for course_candidate_task_core
 //                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
 //                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
-//                bookSectionEntity.setGrade(courseJson.getGrade());
-//                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
 //                bookSectionEntity.setType(courseJson.getType());
-//                bookSectionEntity.setLabelType(courseJson.getLabel());
-//                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+//                bookSectionEntity.setProjectName(courseJson.getProjectName());
 //                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
 //                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
-//                bookSectionEntity.setProjectName(courseJson.getProjectName());
+//                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+//                bookSectionEntity.setLabelType(courseJson.getLabel());
+//                bookSectionEntity.setStage(getStage(courseJson.getStage()));
 
+                // for course_candidate_task_core
+                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
+                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
+                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
+                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
+                bookSectionEntity.setType(courseJson.getType());
+                bookSectionEntity.setLabelType(courseJson.getLabel());
+                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
+                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
+                bookSectionEntity.setProjectName(courseJson.getProjectName());
+
+                // for course_candidate_task_word
+//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().trim().getBytes("utf-8")));
+//                bookSectionEntity.setProjectName(courseJson.getProjectName().trim());
+//                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
+//                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
+//                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
 
                 result.add(bookSectionEntity);
             } catch (UnsupportedEncodingException e) {
@@ -70,6 +72,19 @@ public class V12Course {
             bookSectionRepository.save(result);
         } catch (Exception e) {
             log.error("projectName=" + courseJsons.get(0).getProjectName(), e);
+        }
+    }
+
+    public String getGradeName(String gradeName) {
+        switch (gradeName) {
+            case "第12阶":
+                return "留学一";
+            case "第13阶":
+                return "留学二";
+            case "第14阶":
+                return "留学三";
+            default:
+                return gradeName;
         }
     }
 
@@ -147,23 +162,15 @@ public class V12Course {
             case "高三下":
                 return 1122L;
 
-            case "出国1阶":
-                return 2011L;
+            case "第12阶":
+                return 1131L;
 
-            case "出国2阶":
-                return 2021L;
+            case "第13阶":
+                return 1141L;
 
-            case "出国3阶":
-                return 2031L;
+            case "第14阶":
+                return 1151L;
 
-            case "出国4阶":
-                return 2041L;
-
-            case "出国5阶":
-                return 2051L;
-
-            case "出国6阶":
-                return 2061L;
             default:
                 return 99999L;
 

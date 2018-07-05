@@ -4,7 +4,6 @@ import com.testingedu.demos.jdbc_template.service.BookNationalService;
 import com.testingedu.demos.jdbc_template.service.BookService;
 import com.testingedu.demos.jdbc_template.service.CourseNewToBookNationalService;
 import com.testingedu.demos.jdbc_template.service.v12.V12Course;
-import com.testingedu.demos.jdbc_template.service.v12.WordService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,13 +67,13 @@ public class BookTest {
     }
 
 
-    @Autowired
-    private WordService wordService;
+//    @Autowired
+//    private WordService wordService;
 
-    @Test
-    public void wordTest() throws IOException {
-        wordService.getCourse();
-    }
+//    @Test
+//    public void wordTest() throws IOException {
+//        wordService.getCourse();
+//    }
 
     @Autowired
     private V12Course v12Course;
@@ -87,7 +86,7 @@ public class BookTest {
 //        v12Course.saveTop("/Users/boxfish/Downloads/Re_第13阶课程列表/初中各年级核心及一对一课程列表0628.xlsx");
 //        v12Course.saveTop("/Users/boxfish/Downloads/Re_第13阶课程列表/高中各年级核心及一对一课程列表0628.xlsx");
 
-        v12Course.saveTop("/Users/boxfish/Downloads/第13阶课程列表0629.xlsx");
+        v12Course.saveTop("/Users/boxfish/Downloads/国际课程12、13、14阶课程列表0702.xlsx");
 
     }
 }

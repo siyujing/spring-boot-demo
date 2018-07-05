@@ -29,11 +29,11 @@ spring:
 # 配置 my jdbc
 datasource.bebase.url: jdbc:mysql://127.0.0.1:3306/recommend-wudaokou?useUnicode=true&characterEncoding=utf-8&useSSL=false
 datasource.bebase.username: root
-datasource.bebase.password: 123456
+#datasource.bebase.password: 123456
 datasource.bebase.driver-class-name: com.mysql.jdbc.Driver
 
 # 配置 cloud jdbc
 datasource.cloud.url: jdbc:mysql://127.0.0.1:3306/recommend-wudaokou?useUnicode=true&characterEncoding=utf-8&useSSL=false
 datasource.cloud.username: root
-datasource.cloud.password: 123456
+#datasource.cloud.password: 123456
 datasource.cloud.driver-class-name: com.mysql.jdbc.Driver
