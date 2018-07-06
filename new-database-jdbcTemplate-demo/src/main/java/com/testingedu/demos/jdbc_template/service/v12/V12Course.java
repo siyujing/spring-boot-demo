@@ -42,23 +42,23 @@ public class V12Course {
 //                bookSectionEntity.setStage(getStage(courseJson.getStage()));
 
                 // for course_candidate_task_core
-                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
-                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
-                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
-                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
-                bookSectionEntity.setType(courseJson.getType());
-                bookSectionEntity.setLabelType(courseJson.getLabel());
-                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
-                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
-                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
-                bookSectionEntity.setProjectName(courseJson.getProjectName());
-
-                // for course_candidate_task_word
-//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().trim().getBytes("utf-8")));
-//                bookSectionEntity.setProjectName(courseJson.getProjectName().trim());
+//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
+//                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
 //                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
 //                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
-//                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
+//                bookSectionEntity.setType(courseJson.getType());
+//                bookSectionEntity.setLabelType(courseJson.getLabel());
+//                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+//                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
+//                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
+//                bookSectionEntity.setProjectName(courseJson.getProjectName());
+
+                // for course_candidate_task_word
+                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().trim().getBytes("utf-8")));
+                bookSectionEntity.setProjectName(courseJson.getProjectName().trim());
+                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
+                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
+                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
 
                 result.add(bookSectionEntity);
             } catch (UnsupportedEncodingException e) {
