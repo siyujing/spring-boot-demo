@@ -5,8 +5,9 @@ import lombok.Data;
 
 @Data
 public class UserPeotocol {
+    private Group group;
 
-
+    
     public enum Group {
         GROUP_1("1", "一班"),
         GROUP_2("2", "二班");
