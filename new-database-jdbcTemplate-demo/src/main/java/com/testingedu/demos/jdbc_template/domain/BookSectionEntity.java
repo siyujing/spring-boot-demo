@@ -5,27 +5,26 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Data
-@Entity(name = "course_candidate_online")
+@Entity(name = "course_candidate_task_word")
 public class BookSectionEntity {
     //    course_candidate_online
-    @Id
-    @GeneratedValue
-    private Long id;
-    @Column(name = "course_id")
-    private String courseId;
-    private String type;
-    private String stage;       // 阶段
-    private Long bundle;
-    @Column(name = "project_name")
-    private String projectName;
-    @Column(name = "flag_paid")
-    private Boolean flagPaid;
-    private String difficulty;
-
-    @Column(name = "label_type")
-    private String labelType;   // 书架位置
-    @Column(name = "knowledge_type")
-    private String knowledgeType;
+//    @Id
+//    @GeneratedValue
+//    private Long id;
+//    @Column(name = "course_id")
+//    private String courseId;
+//    private String type;
+//    private String stage;       // 阶段
+//    private Long bundle;
+//    @Column(name = "project_name")
+//    private String projectName;
+//    @Column(name = "flag_paid")
+//    private Boolean flagPaid;
+//    private String difficulty;
+//    @Column(name = "label_type")
+//    private String labelType;   // 书架位置
+//    @Column(name = "knowledge_type")
+//    private String knowledgeType;
 
 
     //    course_candidate_task_core
@@ -49,5 +48,18 @@ public class BookSectionEntity {
 //    private String difficulty;
 //    @Column(name = "project_name")
 //    private String projectName;
+
+    //  course_candidate_task_word
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Column(name = "course_id")
+    private String courseId;
+    @Column(name = "project_name")
+    private String projectName;
+    private String grade;       // 适用年级
+    @Column(name = "grade_index")
+    private Long gradeIndex;
+    private Long bundle;
 
 }
