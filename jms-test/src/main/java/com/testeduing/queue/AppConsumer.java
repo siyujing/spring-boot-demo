@@ -21,7 +21,7 @@ public class AppConsumer {
         // 4. 创建会话
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-        // 5. 创建一个目标
+        // 5. 创建一个 目标
         Destination destination = session.createQueue(queueName);
 
         //6. 创建一个消费者
