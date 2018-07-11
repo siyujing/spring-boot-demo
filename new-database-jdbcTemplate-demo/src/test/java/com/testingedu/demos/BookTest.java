@@ -86,7 +86,10 @@ public class BookTest {
 //        v12Course.saveTop("/Users/boxfish/Downloads/Re_第13阶课程列表/初中各年级核心及一对一课程列表0628.xlsx");
 //        v12Course.saveTop("/Users/boxfish/Downloads/Re_第13阶课程列表/高中各年级核心及一对一课程列表0628.xlsx");
 
-        v12Course.saveTop("/Users/boxfish/Downloads/今日单词表0705.xlsx");
+//        v12Course.saveTop("/Users/boxfish/Downloads/高中各年级核心及一对一课程列表0711.xlsx");
+//        v12Course.saveTop("/Users/boxfish/Downloads/国际课程12、13、14阶课程列表0711.xlsx");
 
+        v12Course.saveTop("/Users/boxfish/Downloads/高中各年级核心及一对一课程列表0711.xlsx");
+        v12Course.saveTop("/Users/boxfish/Downloads/国际课程12、13、14阶课程列表0711.xlsx");
     }
 }

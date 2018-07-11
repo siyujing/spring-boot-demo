@@ -56,19 +56,19 @@ public class ExcelToJsonPoi {
 //                        json.setProjectName(row.getCell(6).getStringCellValue().trim());
 
                         // course_candidate_task_core
-//                        json.setBundle(row.getCell(0).getStringCellValue());
-//                        json.setGrade(row.getCell(1).getStringCellValue());
-//                        json.setLevel(row.getCell(2).getStringCellValue());
-//                        json.setType(row.getCell(3).getStringCellValue());
-//                        json.setLabel(row.getCell(4).getStringCellValue());
-//                        json.setKnowledgeType(row.getCell(5).getStringCellValue());
-//                        json.setProjectName(row.getCell(6).getStringCellValue());
+                        json.setBundle(row.getCell(0).getStringCellValue());
+                        json.setGrade(row.getCell(1).getStringCellValue());
+                        json.setLevel(row.getCell(2).getStringCellValue());
+                        json.setType(row.getCell(3).getStringCellValue());
+                        json.setLabel(row.getCell(4).getStringCellValue());
+                        json.setKnowledgeType(row.getCell(5).getStringCellValue());
+                        json.setProjectName(row.getCell(6).getStringCellValue());
 
 
                         // course_candidate_task_word
-                        json.setBundle(row.getCell(0).getStringCellValue());
-                        json.setGrade(row.getCell(1).getStringCellValue());
-                        json.setProjectName(row.getCell(2).getStringCellValue());
+//                        json.setBundle(row.getCell(0).getStringCellValue());
+//                        json.setGrade(row.getCell(1).getStringCellValue());
+//                        json.setProjectName(row.getCell(2).getStringCellValue());
 
                         jsons.add(json);
                     }
