@@ -1,7 +1,5 @@
 package com.testingedu.utilsdemo.MultiThread.synchrized_suo;
 
-import com.testingedu.utilsdemo.ForTestDemo;
-
 /**
  synchronized 修饰方法和代码块时：
  修饰静态方法和修饰类是一样的
