@@ -14,7 +14,6 @@ public class Client {
         concreteHandler1.successor = concreteHandler2;
         concreteHandler2.successor = concreteHandler3;
 
-
         concreteHandler1.handlerRequest("handler1");
     }
 }
