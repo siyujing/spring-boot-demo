@@ -43,4 +43,34 @@ public class Algorithm {
             System.out.println("a=" + a[i]);
         }
     }
+
+    // 递归数组求和
+    public static int binarySearch(int[] a, int startIndexIndex, int endIndex) {
+        if (startIndexIndex == endIndex) {
+            return a[startIndexIndex];
+        }
+        return a[startIndexIndex] + binarySearch(a, startIndexIndex + 1, endIndex);
+    }
+
+    // 递归法实现二分查找
+    public static int binarySearch(int[] a, int startIndex, int endIndex, int data) {
+        int m = (startIndex + endIndex) / 2;
+
+        if (startIndex > endIndex) {
+            return -1;
+        }
+
+        if (a[m] == data) {
+            return m;
+        }
+
+        if (a[m] > data) {
+            return binarySearch(a, startIndex, m - 1, data);
+        }
+
+        if (a[m] < data) {
+            return binarySearch(a, m + 1, endIndex, data);
+        }
+        return -1;
+    }
 }
