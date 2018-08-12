@@ -31,17 +31,14 @@ public class V12Course {
 
             try {
                 // for course_candidate_online
-//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
-//                String gradeIndex = getStage(courseJson.getStage());
-//                Long newBundle = Long.parseLong(gradeIndex) * 10000 + Long.parseLong(courseJson.getBundle());
-//                bookSectionEntity.setBundle(newBundle);
-//                bookSectionEntity.setStage(getStage(courseJson.getStage()));
-//                bookSectionEntity.setType(courseJson.getType());
-//                bookSectionEntity.setLabelType(courseJson.getLabel());
-//                bookSectionEntity.setProjectName(courseJson.getProjectName());
-//                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
-//                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
-//                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
+                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
+                String gradeIndex = getStage(courseJson.getStage());
+                Long newBundle = Long.parseLong(gradeIndex) * 10000 + Long.parseLong(courseJson.getBundle());
+                bookSectionEntity.setBundle(newBundle);
+                bookSectionEntity.setStage(getStage(courseJson.getStage()));
+                bookSectionEntity.setProjectName(courseJson.getProjectName());
+                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
+                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点")?true:false);
 
                 // for course_candidate_task_core
 //                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().getBytes("utf-8")));
@@ -50,21 +47,16 @@ public class V12Course {
 //                bookSectionEntity.setBundle(newBundle);
 //                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
 //                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
-//                bookSectionEntity.setType(courseJson.getType());
-//                bookSectionEntity.setLabelType(courseJson.getLabel());
 //                bookSectionEntity.setKnowledgeType(courseJson.getKnowledgeType());
 //                bookSectionEntity.setFlagPaid(courseJson.getKnowledgeType().trim().equals("拔高知识点") ? true : false);
-//                bookSectionEntity.setDifficulty(getDifficulty(courseJson.getLevel()));
 //                bookSectionEntity.setProjectName(courseJson.getProjectName());
 
                 // for course_candidate_task_word
-                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().trim().getBytes("utf-8")));
-                bookSectionEntity.setProjectName(courseJson.getProjectName().trim());
-                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
-                Long gradeIndex = getGradeIndex(courseJson.getGrade());
-                Long newBundle = gradeIndex * 10000 + Long.parseLong(courseJson.getBundle());
-                bookSectionEntity.setGradeIndex(newBundle);
-                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
+//                bookSectionEntity.setCourseId(Base64.encodeBase64URLSafeString(courseJson.getProjectName().trim().getBytes("utf-8")));
+//                bookSectionEntity.setProjectName(courseJson.getProjectName().trim());
+//                bookSectionEntity.setGrade(getGradeName(courseJson.getGrade()));
+//                bookSectionEntity.setGradeIndex(getGradeIndex(courseJson.getGrade()));
+//                bookSectionEntity.setBundle(Long.parseLong(courseJson.getBundle()));
 
                 result.add(bookSectionEntity);
             } catch (UnsupportedEncodingException e) {

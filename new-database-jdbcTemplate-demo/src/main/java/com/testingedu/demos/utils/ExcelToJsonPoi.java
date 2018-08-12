@@ -34,7 +34,7 @@ public class ExcelToJsonPoi {
 
             book = new XSSFWorkbook(is);
 
-            sheet = book.getSheetAt(0);
+            sheet = book.getSheetAt(1);
 
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
@@ -47,28 +47,24 @@ public class ExcelToJsonPoi {
                         row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
 
                         // course_candidate_online
-//                        json.setBundle(row.getCell(0).getStringCellValue());
-//                        json.setStage(row.getCell(1).getStringCellValue());
-//                        json.setType(row.getCell(2).getStringCellValue());
-//                        json.setLabel(row.getCell(3).getStringCellValue());
-//                        json.setKnowledgeType(row.getCell(4).getStringCellValue());
-//                        json.setLevel(row.getCell(5).getStringCellValue());
-//                        json.setProjectName(row.getCell(6).getStringCellValue().trim());
+                        json.setBundle(row.getCell(0).getStringCellValue());
+                        json.setStage(row.getCell(1).getStringCellValue());
+                        json.setLevel(row.getCell(2).getStringCellValue());
+                        json.setKnowledgeType(row.getCell(3).getStringCellValue());
+                        json.setProjectName(row.getCell(4).getStringCellValue().trim());
 
                         // course_candidate_task_core
 //                        json.setBundle(row.getCell(0).getStringCellValue());
 //                        json.setGrade(row.getCell(1).getStringCellValue());
 //                        json.setLevel(row.getCell(2).getStringCellValue());
-//                        json.setType(row.getCell(3).getStringCellValue());
-//                        json.setLabel(row.getCell(4).getStringCellValue());
-//                        json.setKnowledgeType(row.getCell(5).getStringCellValue());
-//                        json.setProjectName(row.getCell(6).getStringCellValue());
+//                        json.setKnowledgeType(row.getCell(3).getStringCellValue());
+//                        json.setProjectName(row.getCell(4).getStringCellValue());
 
 
                         // course_candidate_task_word
-                        json.setBundle(row.getCell(0).getStringCellValue());
-                        json.setGrade(row.getCell(1).getStringCellValue());
-                        json.setProjectName(row.getCell(2).getStringCellValue());
+//                        json.setBundle(row.getCell(0).getStringCellValue());
+//                        json.setGrade(row.getCell(1).getStringCellValue());
+//                        json.setProjectName(row.getCell(2).getStringCellValue());
 
                         jsons.add(json);
                     }
