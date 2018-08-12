@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClientPrototype {
 
-    public void getConcreteResumt() {
+    public void getConcreteResume() {
         Resume concreteResume1 = new ConcreteResume1("id1");
 
-        Resume concreteResumt2 = concreteResume1.clone();
+        Resume concreteResume2 = concreteResume1.clone();
 
         System.out.println("concreteResume1" + concreteResume1.toString());
 
-        System.out.println("concreteResume2" + concreteResumt2.toString());
+        System.out.println("concreteResume2" + concreteResume2.toString());
 
     }
 }
