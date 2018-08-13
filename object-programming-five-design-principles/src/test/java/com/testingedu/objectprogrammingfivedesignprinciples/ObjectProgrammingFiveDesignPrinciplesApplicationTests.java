@@ -2,6 +2,7 @@ package com.testingedu.objectprogrammingfivedesignprinciples;
 
 import com.testingedu.objectprogrammingfivedesignprinciples.代理模式.ClientProxyService;
 import com.testingedu.objectprogrammingfivedesignprinciples.原型模式.基本原型模式.ClientPrototype;
+import com.testingedu.objectprogrammingfivedesignprinciples.命令模式.ClientCommandService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.简单工厂模式.ClientCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,5 +43,15 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
     @Test
     public void clientCalculator() {
         clientCalculator.calculator();
+    }
+
+
+    // 命令模式
+    @Autowired
+    ClientCommandService clientCommandService;
+
+    @Test
+    public void invokerRequest() {
+        clientCommandService.invokerRequest();
     }
 }
