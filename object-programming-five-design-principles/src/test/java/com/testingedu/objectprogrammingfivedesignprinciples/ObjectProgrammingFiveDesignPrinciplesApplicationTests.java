@@ -4,6 +4,7 @@ import com.testingedu.objectprogrammingfivedesignprinciples.代理模式.ClientP
 import com.testingedu.objectprogrammingfivedesignprinciples.原型模式.基本原型模式.ClientPrototype;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法.ClientCalculatorService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.抽象工厂.service.ClientAbstrictService;
+import com.testingedu.objectprogrammingfivedesignprinciples.命令模式.ClientCommandService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.简单工厂模式.ClientCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,6 +46,7 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
         clientCalculator.calculator();
     }
 
+
     // 工厂方法(计算器)
     @Autowired
     private ClientCalculatorService clientCalculatorService;
@@ -62,6 +64,16 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
     public void clientAbstrictService() {
         clientAbstrictService.test();
         clientAbstrictService.test2();
+    }
+
+
+    // 命令模式
+    @Autowired
+    ClientCommandService clientCommandService;
+
+    @Test
+    public void invokerRequest() {
+        clientCommandService.invokerRequest();
     }
 
 }
