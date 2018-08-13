@@ -3,6 +3,7 @@ package com.testingedu.objectprogrammingfivedesignprinciples;
 import com.testingedu.objectprogrammingfivedesignprinciples.代理模式.ClientProxyService;
 import com.testingedu.objectprogrammingfivedesignprinciples.原型模式.基本原型模式.ClientPrototype;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法.ClientCalculatorService;
+import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.抽象工厂.service.ClientAbstrictService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.简单工厂模式.ClientCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -51,6 +52,16 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
     @Test
     public void clientCalculatorService() {
         clientCalculatorService.calcu();
+    }
+
+    // 抽象工厂方法(数据库扩展)
+    @Autowired
+    private ClientAbstrictService clientAbstrictService;
+
+    @Test
+    public void clientAbstrictService() {
+        clientAbstrictService.test();
+        clientAbstrictService.test2();
     }
 
 }
