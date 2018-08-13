@@ -12,6 +12,7 @@ public class AccessDepartment implements IDepartment {
     @Override
     public Department findByDepartmentId() {
         System.out.println("AccessDepartment, find one");
+
         return new Department();
     }
 }
