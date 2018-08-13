@@ -1,4 +1,4 @@
-package com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法;
+package com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法模式;
 
 import lombok.Data;
 

@@ -2,6 +2,7 @@ package com.testingedu.objectprogrammingfivedesignprinciples;
 
 import com.testingedu.objectprogrammingfivedesignprinciples.代理模式.ClientProxyService;
 import com.testingedu.objectprogrammingfivedesignprinciples.原型模式.基本原型模式.ClientPrototype;
+import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法模式.ClientCalculatorService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂方法.ClientCalculatorService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.抽象工厂.service.ClientAbstrictService;
 import com.testingedu.objectprogrammingfivedesignprinciples.命令模式.ClientCommandService;
@@ -47,7 +48,7 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
     }
 
 
-    // 工厂方法(计算器)
+    // 工厂方法模式(计算器)
     @Autowired
     private ClientCalculatorService clientCalculatorService;
 
