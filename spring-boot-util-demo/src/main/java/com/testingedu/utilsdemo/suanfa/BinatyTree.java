@@ -1,6 +1,5 @@
 package com.testingedu.utilsdemo.suanfa;
 
-import com.testingedu.utilsdemo.demo_packet.ForTestDemo;
 import lombok.Data;
 
 /**
@@ -9,23 +8,23 @@ import lombok.Data;
 public class BinatyTree {
 
     // 初始化一个树，初始化时必须逆序 即先定义叶子
-    public static ForTestDemo.Node initNode() {
-        ForTestDemo.Node G = new ForTestDemo.Node(2, null, null);
-        ForTestDemo.Node H = new ForTestDemo.Node(4, null, null);
-        ForTestDemo.Node J = new ForTestDemo.Node(8, null, null);
-        ForTestDemo.Node D = new ForTestDemo.Node(1, null, G);
-        ForTestDemo.Node E = new ForTestDemo.Node(5, H, null);
-        ForTestDemo.Node F = new ForTestDemo.Node(7, null, J);
-        ForTestDemo.Node B = new ForTestDemo.Node(3, D, E);
-        ForTestDemo.Node C = new ForTestDemo.Node(9, F, null);
-        ForTestDemo.Node A = new ForTestDemo.Node(6, B, C);
+    public static Node initNode() {
+        Node G = new Node(2, null, null);
+        Node H = new Node(4, null, null);
+        Node J = new Node(8, null, null);
+        Node D = new Node(1, null, G);
+        Node E = new Node(5, H, null);
+        Node F = new Node(7, null, J);
+        Node B = new Node(3, D, E);
+        Node C = new Node(9, F, null);
+        Node A = new Node(6, B, C);
 
         return A;
     }
 
 
     // 递归先序遍历
-    public static void theFirstTraversal(ForTestDemo.Node node) {
+    public static void theFirstTraversal(Node node) {
         System.out.println(node.getDate()); // 输出根节点
 
         // 遍历左孩子
@@ -39,8 +38,8 @@ public class BinatyTree {
         }
     }
 
-    // 递归先序遍历
-    public static void theInOrderTraversal(ForTestDemo.Node node) {
+    // 递归中序遍历
+    public static void theInOrderTraversal(Node node) {
         if (node.getLeftNode() != null) {
             theInOrderTraversal(node.getLeftNode());
         }
@@ -53,7 +52,7 @@ public class BinatyTree {
     }
 
     // 递归后续遍历
-    public static void thePostOrderTraversal(ForTestDemo.Node node) {
+    public static void thePostOrderTraversal(Node node) {
         if (node.getLeftNode() != null) {
             thePostOrderTraversal(node.getLeftNode());
         }
@@ -71,10 +70,10 @@ public class BinatyTree {
     @Data
     public static class Node {
         private int date; // 根节点
-        private ForTestDemo.Node leftNode;
-        private ForTestDemo.Node rightNode;
+        private Node leftNode;
+        private Node rightNode;
 
-        public Node(int date, ForTestDemo.Node leftNode, ForTestDemo.Node rightNode) {
+        public Node(int date, Node leftNode, Node rightNode) {
             this.date = date;
             this.leftNode = leftNode;
             this.rightNode = rightNode;

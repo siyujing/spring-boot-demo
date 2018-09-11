@@ -10,7 +10,7 @@ public class Sum {
     public static void main(String[] args) {
         int i = 0;
         int j = 0;
-        int data = 0;
+        int data = 9;
         sumN((data >> 1) + 1);
         while (i <= ((data >> 1) + 1)) {
             if (data == 0) {
