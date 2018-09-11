@@ -1,7 +1,5 @@
 package com.testingedu.utilsdemo;
 
-import com.testingedu.utilsdemo.MultiThread.synchrized_suo.NotifyNotifyAll;
-import com.testingedu.utilsdemo.线程间通信.方法一.MethodOne;
 import com.testingedu.utilsdemo.线程间通信.方法一.MethodTwo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
