@@ -1,5 +1,6 @@
 package com.testingedu.utilsdemo.time_utils.service;
 
+import javafx.scene.media.SubtitleTrack;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import java.util.Calendar;
 @Service
 public class TimeStampUtil {
     public static void main(String[] args) throws ParseException {
-        getEndTimeYesterday();
+        getEndTimeToday2();
     }
 
     public static void timeStamps() throws ParseException {
@@ -73,6 +74,22 @@ public class TimeStampUtil {
         calendar.set(Calendar.MILLISECOND, 0);
         System.out.println("1calendar:" + calendar.getTime());        // 1calendar:Wed Mar 07 00:00:00 CST 2018
         System.out.println("2calendar:" + calendar.getTime().getTime());      // 2calendar:1520352000000
+        System.out.println("dateTime:");
+        final DateTime dateTime = new DateTime(calendar.getTime());
+        final String s = dateTime.toString("yyyy-MM-dd HH:mm:ss");
+        System.out.println(s);
         return new DateTime(calendar.getTime());
+    }
+
+    public static String getEndTimeToday2() {
+        Calendar todayEnd = Calendar.getInstance();
+        todayEnd.set(Calendar.HOUR_OF_DAY, 23);
+        todayEnd.set(Calendar.MINUTE, 59);
+        todayEnd.set(Calendar.SECOND, 59);
+        todayEnd.set(Calendar.MILLISECOND, 999);
+        final DateTime dateTime = new DateTime(todayEnd.getTime());
+        final String s = dateTime.toString("yyyy-MM-dd HH:mm:ss");
+        System.out.println(s);
+        return s;
     }
 }
