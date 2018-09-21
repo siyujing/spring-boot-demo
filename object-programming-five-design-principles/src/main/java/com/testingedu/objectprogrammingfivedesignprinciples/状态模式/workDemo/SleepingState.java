@@ -13,12 +13,4 @@ public class SleepingState extends State {
     public void writeProject(Work work) {
         System.out.println("当前"+work.getHour()+" 点，不行了，睡着了。。。");
     }
-
-    public static void main(String[] args) {
-        Console console = System.console();
-        String uuu = console.readLine("uuu");
-        console.printf(uuu);
-        System.out.println(console);
-//        console.printf("当前{0} 点，不行了，睡着了。。。", "0");
-    }
 }
