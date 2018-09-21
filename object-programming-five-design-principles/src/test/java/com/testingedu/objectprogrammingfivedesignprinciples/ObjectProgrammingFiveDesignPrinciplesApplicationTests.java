@@ -6,6 +6,7 @@ import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.工厂�
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.抽象工厂.service.ClientAbstrictService;
 import com.testingedu.objectprogrammingfivedesignprinciples.命令模式.ClientCommandService;
 import com.testingedu.objectprogrammingfivedesignprinciples.工厂模式.简单工厂模式.ClientCalculator;
+import com.testingedu.objectprogrammingfivedesignprinciples.状态模式.workDemo.WorkDemoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,4 +77,13 @@ public class ObjectProgrammingFiveDesignPrinciplesApplicationTests {
         clientCommandService.invokerRequest();
     }
 
+
+    // 状态模式
+    @Autowired
+    private WorkDemoService workDemoService;
+
+    @Test
+    public void serviceMethod() {
+        workDemoService.serviceMethod();
+    }
 }
