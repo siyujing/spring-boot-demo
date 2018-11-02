@@ -107,6 +107,7 @@ public class LinkedListQueue {
         temp = queue.dequeue(1);
         System.out.println("从双向队列前端依序取出的元素数据值为：" + temp);
         System.out.println();
+
     }
 
 
