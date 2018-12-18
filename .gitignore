@@ -10,5 +10,6 @@
 .idea/workspace.xml
 mvnw.cmd
 *.iml
+*.class
 !.mvn/wrapper/maven-wrapper.jar
 .mvn
