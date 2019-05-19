@@ -1,0 +1,14 @@
+spring.application.name: springBoot-rabbitmq-consummer
+
+logging:
+  file: ${user.home}/logs/${HOSTNAME:log}/${spring.application.name}.log
+  level:
+    org.springframework: WARN
+    com.testingedu.demos: DEBUG
+server:
+ port: 8091
+
+spring.rabbitmq.host: 127.0.0.1
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: guest
+spring.rabbitmq.password: guest
