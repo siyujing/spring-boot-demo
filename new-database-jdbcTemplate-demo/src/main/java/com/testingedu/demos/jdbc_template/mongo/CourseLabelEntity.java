@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,9 @@ public class CourseLabelEntity {
     private String courseId;
     private String courseNameChinese;
     private String courseNameEnglish;
+
+    @Transient
+    private String projectName;
 
     // 内容标注
     private List<LabelObject> keysInternational = new ArrayList<>();     // 从标注库同步到recommend,courseNew的数据

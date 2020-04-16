@@ -11,6 +11,7 @@ import com.testingedu.demos.jdbc_template.mongo.CourseLabelMongoRepository;
 import com.testingedu.demos.utils.FormatUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -85,7 +87,7 @@ public class BookService {
                 CourseHadLabelAllEntity cl = new CourseHadLabelAllEntity();
                 cl.from(m);
                 result.add(cl);
-                log.debug("add one to list [{}]",m.getCourseId());
+                log.debug("add one to list [{}]", m.getCourseId());
 
             } catch (Exception e) {
                 log.error("add one to list [{}]", m.getCourseId());
@@ -98,10 +100,11 @@ public class BookService {
 
     // 获取指定书的标注保存到本地 mysql
     public void getAllLabelToCourseHadLabelByBook() throws IOException {
-        File file = new File("/Users/boxfish/IdeaProjects/spring-boot-demo/new-database-jdbcTemplate-demo/src/main/resources/book.txt");
+        File file = new File("/Users/boxfish/code/ideaProjects/spring-boot-demo/new-database-jdbcTemplate-demo/src/main/resources/book.txt");
         List<String> list = FileUtils.readLines(file);
         List<BookHadKnowledgeHandler.CourseInfoResponse> courseInfoResponses = bookHadKnowledgeHandler.findByBookName(list);
         List<String> courseIds = courseInfoResponses.stream().map(BookHadKnowledgeHandler.CourseInfoResponse::getCourseId).collect(Collectors.toList());
+        Map<String, BookHadKnowledgeHandler.CourseInfoResponse> courseMapByCourseId = courseInfoResponses.stream().collect(Collectors.toMap(BookHadKnowledgeHandler.CourseInfoResponse::getCourseId, Function.identity(), (k1, k2) -> k2));
         List<CourseLabelEntity> courseLabelEntities = courseLabelMongoRepository.findByCourseIdIn(courseIds);
 
         List<CourseHadLabelAllEntity> result = new ArrayList<>();
@@ -109,9 +112,10 @@ public class BookService {
         courseLabelEntities.forEach(m -> {
             try {
                 CourseHadLabelAllEntity cl = new CourseHadLabelAllEntity();
+                m.setProjectName(courseMapByCourseId.get(m.getCourseId()).getProjectName());
                 cl.from(m);
                 result.add(cl);
-                log.debug("add one to list [{}]",m.getCourseId());
+                log.debug("add one to list [{}]", m.getCourseId());
 
             } catch (Exception e) {
                 log.error("add one to list [{}]", m.getCourseId());
